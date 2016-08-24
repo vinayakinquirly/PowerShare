@@ -1,6 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.inquirly.powershare.MainActivity">
+
+    <item
+        android:id="@+id/action_alert"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_menu_alerts"
+        android:title="@string/title_chat"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_chat"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_menu_chat"
+        android:title="@string/title_chat"
+        app:showAsAction="always" />
 
 </menu>

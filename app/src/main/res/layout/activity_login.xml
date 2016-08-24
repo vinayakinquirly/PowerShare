@@ -1,12 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.inquirly.inquirlyforbusinesses.activity.LoginActivity">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/background_app"
+    android:layout_width="-1dp"
+    android:layout_height="-1dp">
 
+    <ImageView
+        android:layout_width="-1dp"
+        android:layout_height="-1dp"
+        android:layout_margin="@dimen/margin_big"
+        android:src="@drawable/img_inquirly_logo"
+        android:layout_above="@+id/linear_login_base" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/linear_login_base"
+        android:background="@color/background_action_bar"
+        android:padding="@dimen/margin_big"
+        android:layout_width="-1dp"
+        android:layout_height="-2dp"
+        android:layout_centerInParent="true">
+
+        <EditText
+            android:id="@+id/edit_login_email"
+            android:background="@drawable/background_edit_text"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:layout_width="-1dp"
+            android:layout_height="-2dp"
+            android:layout_marginTop="@dimen/margin_big"
+            android:minHeight="@dimen/height_text_view"
+            android:hint="@string/hint_email_id"
+            style="@style/label_small_hint_default" />
+        <EditText
+            android:id="@+id/edit_login_password"
+            android:background="@drawable/background_edit_text"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:layout_width="-1dp"
+            android:layout_height="-2dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:minHeight="@dimen/height_text_view"
+            android:hint="@string/hint_password"
+            style="@style/label_small_hint_default" />
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/txt_login_btn"
+            android:layout_width="@dimen/width_button"
+            android:layout_height="@dimen/height_button"
+            android:layout_marginTop="@dimen/margin_big"
+            android:text="@string/label_go"
+            style="@style/button_white" />
+        <TextView
+            android:gravity="center"
+            android:id="@+id/txt_login_error"
+            android:visibility="gone"
+            android:layout_width="-1dp"
+            android:layout_height="-2dp"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/error_generic"
+            style="@style/label_error_white" />
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/txt_login_forgot_password"
+            android:visibility="invisible"
+            android:clickable="true"
+            android:layout_width="-2dp"
+            android:layout_height="-2dp"
+            android:layout_marginTop="@dimen/margin_big"
+            android:text="@string/label_forgot_password"
+            style="@style/button_no_background" />
+    </LinearLayout>
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="-1dp"
+        android:layout_height="-1dp"
+        android:layout_below="@+id/linear_login_base">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="-2dp"
+            android:layout_height="-2dp"
+            android:layout_centerInParent="true">
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="-2dp"
+                android:layout_height="-2dp"
+                android:text="@string/label_not_member"
+                style="@style/label_small_grey" />
+            <TextView
+                android:id="@+id/txt_login_send_membership_query"
+                android:clickable="true"
+                android:layout_width="-2dp"
+                android:layout_height="-2dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/label_send_membership_query"
+                style="@style/label_small_blue" />
+        </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>

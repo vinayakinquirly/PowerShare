@@ -1,0 +1,39 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.inquirly.powershare.MainActivity">
+
+    <item
+        android:id="@+id/powerRow"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_drawer_powershare"
+        android:title="Powershare"
+        android:checked="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/listenRow"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_drawer_listen"
+        android:title="Listen"
+        android:checked="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/pipeRow"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_drawer_pipeline"
+        android:title="Pipeline"
+        android:checked="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/logoutRow"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_drawer_settings"
+        android:title="Logout"
+        android:checked="true"
+        app:showAsAction="always" />
+
+</menu>

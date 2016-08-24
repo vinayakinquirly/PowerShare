@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/onboardLinearMain"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.inquirly.powershare.activity.OnboardActivity"
+    android:background="@color/background_action_bar">
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="8dp"
+            android:id="@+id/prog_1"
+            android:background="@drawable/background_button_white"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="8dp"
+            android:id="@+id/prog_2"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/background_white_outline" />
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="8dp"
+            android:id="@+id/prog_3"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/background_white_outline" />
+    </TableRow>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/onBoardPager"
+        android:layout_marginTop="10dp">
+
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>
+

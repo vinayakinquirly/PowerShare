@@ -1,0 +1,125 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="-1dp"
+    android:layout_height="-1dp"
+    tools:context="com.inquirly.inquirlyforbusinesses.fragments.OnboardScreenOne"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relative_walkthrough_base_one"
+        android:background="@color/background_action_bar"
+        android:visibility="visible"
+        android:layout_width="-1dp"
+        android:layout_height="-1dp">
+
+        <com.inquirly.inquirlyforbusinesses.View.CustomTextView
+            android:gravity="center_horizontal"
+            android:id="@+id/txt_walkthrough_title"
+            android:paddingLeft="@dimen/margin_medium"
+            android:paddingRight="@dimen/margin_medium"
+            android:layout_width="-1dp"
+            android:layout_height="-2dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="POWERSHARE YOUR POSTS"
+            style="@style/label_big_white" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/linear_walkthrough_description_base"
+            android:layout_width="-1dp"
+            android:layout_height="-2dp"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:minHeight="80dp"
+            android:layout_alignParentBottom="true">
+
+            <com.inquirly.inquirlyforbusinesses.View.CustomTextView
+                android:gravity="center_horizontal"
+                android:id="@+id/txt_walkthrough_description"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingRight="@dimen/margin_medium"
+                android:layout_width="-1dp"
+                android:layout_height="-2dp"
+                android:text="POWERSHARE YOUR POSTS"
+                android:layout_below="@+id/linear_walkthrough_progress"
+                style="@style/label_medium_white" />
+
+            <com.inquirly.inquirlyforbusinesses.View.CustomTextView
+                android:gravity="center_horizontal"
+                android:id="@+id/txt_walkthrough_dexcription_sub"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingRight="@dimen/margin_medium"
+                android:layout_width="-1dp"
+                android:layout_height="-2dp"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="POWERSHARE YOUR POSTS"
+                android:layout_below="@+id/linear_walkthrough_progress"
+                style="@style/label_small_white" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_walkthrough"
+            android:layout_width="-1dp"
+            android:layout_height="-1dp"
+            android:layout_marginTop="@dimen/margin_big"
+            android:layout_marginBottom="@dimen/margin_big"
+            android:layout_above="@+id/linear_walkthrough_description_base"
+            android:layout_below="@+id/txt_walkthrough_title" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/relative_walkthrough_base_two"
+        android:visibility="gone"
+        android:layout_width="-1dp"
+        android:layout_height="-1dp">
+
+        <RelativeLayout
+            android:layout_width="-1dp"
+            android:layout_height="0dp"
+            android:layout_weight="4.0">
+            <ImageView
+                android:padding="@dimen/activity_vertical_margin"
+                android:layout_width="-2dp"
+                android:layout_height="-2dp"
+                android:src="@drawable/ic_logo_inquirly"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:background="@color/background_action_bar"
+            android:layout_width="-1dp"
+            android:layout_height="0dp"
+            android:layout_weight="6.0">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="-2dp"
+                android:layout_height="-2dp"
+                android:layout_centerInParent="true">
+
+                <com.inquirly.inquirlyforbusinesses.View.CustomTextView
+                    android:gravity="center_horizontal"
+                    android:layout_width="-1dp"
+                    android:layout_height="-2dp"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/label_walkthrough_get_started"
+                    android:layout_below="@+id/linear_walkthrough_progress"
+                    style="@style/label_big_white" />
+
+                <com.inquirly.inquirlyforbusinesses.View.CustomTextView
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/txt_walkthrough_go_btn"
+                    android:paddingLeft="@dimen/margin_larger"
+                    android:paddingTop="@dimen/margin_big"
+                    android:paddingRight="@dimen/margin_larger"
+                    android:paddingBottom="@dimen/margin_big"
+                    android:layout_width="-2dp"
+                    android:layout_height="-2dp"
+                    android:layout_marginTop="@dimen/margin_big"
+                    android:text="@string/label_walkthrough_go"
+                    style="@style/button_white" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

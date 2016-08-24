@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:weightSum="3">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView"
+            android:layout_weight="1"
+            android:background="@drawable/ic_placeholder_channels" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="powershare test"
+            android:id="@+id/textView"
+            android:layout_weight="2"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="20dp"
+            android:typeface="sans"
+            android:textSize="21sp"
+            android:textColor="#000"
+            android:layout_marginLeft="15dp" />
+    </TableRow>
+
+<!--    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/powerRow">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView2"
+            android:src="@drawable/ic_drawer_powershare"
+            android:padding="12dp"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Powershare"
+            android:id="@+id/textView2"
+            android:layout_gravity="center_vertical"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:typeface="serif" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/listenRow">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView3"
+            android:src="@drawable/ic_drawer_listen"
+            android:padding="12dp"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Listen"
+            android:id="@+id/textView3"
+            android:layout_gravity="center_vertical"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:typeface="serif" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/pipeRow">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView4"
+            android:src="@drawable/ic_drawer_pipeline"
+            android:padding="12dp"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pipeline"
+            android:id="@+id/textView4"
+            android:layout_gravity="center_vertical"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:typeface="serif" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/logoutRow">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView5"
+            android:src="@drawable/ic_drawer_settings"
+            android:padding="12dp"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:id="@+id/textView5"
+            android:layout_gravity="center_vertical"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:typeface="serif" />
+    </TableRow>-->
+</LinearLayout>
