@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements
     private Toolbar toolbar;
     private TabLayout mTabLayout;
     private ViewPager powerPager;
-    private PagerTitleStrip powerTitleStrip;
     private PowerPagerAdapter powerPagerAdapter;
     private static final String TAG = "MainActivity";
     private ArrayList<String> titles = new ArrayList<>();
@@ -47,8 +46,6 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.powerToolbar);
@@ -91,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements
                 View tabViewChild = vgTab.getChildAt(i);
                 if (tabViewChild instanceof TextView) {
                     ((TextView) tabViewChild).setTypeface(mTypeface, Typeface.NORMAL);
+                    ((TextView) tabViewChild).setTextSize(14);
                 }
             }
         }
@@ -156,13 +154,13 @@ public class MainActivity extends AppCompatActivity implements
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.powerRow:
-                intent = new Intent(MainActivity.this,LoginActivity.class);
+                intent = new Intent(MainActivity.this,MainActivity.class);
                 startActivity(intent);
-                    //powerRow.setBackgroundColor(getResources().getColor(R.color.background_tab_selected_indicator));
                 break;
 
             case R.id.listenRow:
-                listenRow.setBackgroundColor(getResources().getColor(R.color.background_tab_selected_indicator));
+                intent = new Intent(MainActivity.this,ListenActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.pipeRow:

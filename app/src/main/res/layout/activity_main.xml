@@ -38,10 +38,11 @@
                 android:background="@color/background_action_bar"
                 app:layout_collapseMode="none"
                 android:layout_marginTop="?android:attr/actionBarSize"
-                app:tabIndicatorColor="@color/white"
-                app:tabIndicatorHeight="@dimen/height_tab_selected_indicator"
+                app:tabIndicatorColor="@color/accent_material_dark"
+                app:tabIndicatorHeight="4dp"
                 app:tabSelectedTextColor="@android:color/white"
-                app:tabTextColor="@color/white"/>
+                app:tabTextColor="@color/white"
+                app:tabGravity="fill"/>
 
             <android.support.v4.view.ViewPager
                 android:layout_width="match_parent"

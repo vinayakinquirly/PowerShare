@@ -214,4 +214,5 @@
     <dimen name="width_drawer_list">300.0dip</dimen>
     <dimen name="width_listen_action_button">90.0dip</dimen>
     <dimen name="width_pic_post">500.0dip</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>
