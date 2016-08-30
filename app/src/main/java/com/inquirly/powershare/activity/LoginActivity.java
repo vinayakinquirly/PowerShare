@@ -1,7 +1,10 @@
 package com.inquirly.powershare.activity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.View;
 import org.json.JSONObject;
 import java.util.ArrayList;
@@ -15,16 +18,20 @@ import android.widget.TextView;
 import com.inquirly.powershare.R;
 import com.android.volley.VolleyError;
 import android.support.v7.app.AppCompatActivity;
+
+import com.inquirly.powershare.constants.Constants;
 import com.inquirly.powershare.others.MakeApiRequest;
 import com.inquirly.powershare.others.IRequestCallBack;
 import com.inquirly.powershare.application.MainApplicationClass;
 
 public class LoginActivity extends AppCompatActivity {
 
+    String userEmail = null;
     private EditText email,pass;
     private JSONObject jsonObject = new JSONObject();
     private static final String TAG = "LoginActivity";
     private ArrayList<String> details = new ArrayList<>();
+    private SharedPreferences sharedPreferences ;
     private MainApplicationClass appInstance = MainApplicationClass.getInstance();
 
     @Override
@@ -41,6 +48,17 @@ public class LoginActivity extends AppCompatActivity {
         details.add(pass.getText().toString());
 
         assert txt_login_btn != null;
+        sharedPreferences = getSharedPreferences(Constants.SHARED_USER_DETAILS, Context.MODE_PRIVATE);
+        if(sharedPreferences!=null) {
+            userEmail = sharedPreferences.getString(Constants.SHARED_USER_EMAIL,null);
+            Log.i(TAG,"check user email---" + userEmail);
+
+            if(userEmail!=null){
+                Intent intent = new Intent(this,MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }
 
         txt_login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +83,11 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(JSONObject response) {
                         Log.i(TAG,"response Received---" + response.toString());
-                        try {
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.clear();
+                        editor.putString(Constants.SHARED_USER_EMAIL,email.getText().toString());
+                        editor.apply();
+                        try{
                             int resCode =response.getJSONObject("status").getInt("resCode");
                             if(resCode==3001){
                                 Intent intent = new Intent(LoginActivity.this,MainActivity.class);

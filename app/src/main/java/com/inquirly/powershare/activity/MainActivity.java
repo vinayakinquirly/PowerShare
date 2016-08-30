@@ -1,48 +1,40 @@
 package com.inquirly.powershare.activity;
 
-import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.PagerTitleStrip;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
+import android.app.Activity;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.TableRow;
+import android.content.Intent;
 import android.widget.TextView;
-
+import android.graphics.Typeface;
 import com.inquirly.powershare.R;
-import com.inquirly.powershare.adapter.PowerPagerAdapter;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.widget.Toolbar;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentTransaction;
 import com.inquirly.powershare.constants.Constants;
-
-import java.util.ArrayList;
+import android.support.design.widget.NavigationView;
+import android.support.v7.app.ActionBarDrawerToggle;
+import com.inquirly.powershare.fragment.MainPowerShareFragment;
 
 public class MainActivity extends AppCompatActivity implements
-        ViewPager.OnPageChangeListener,TabLayout.OnTabSelectedListener,
-        NavigationView.OnNavigationItemSelectedListener{
+        NavigationView.OnNavigationItemSelectedListener {
 
     private Intent intent;
-    private Toolbar toolbar;
-    private TabLayout mTabLayout;
-    private ViewPager powerPager;
-    private PowerPagerAdapter powerPagerAdapter;
+    public static Toolbar toolbar;
+    private static Activity activity;
+    private static ActionBar actionBar;
+    public static FrameLayout frameLayout;
+    public static LinearLayout linearLayoutMain;
     private static final String TAG = "MainActivity";
-    private ArrayList<String> titles = new ArrayList<>();
-    private TableRow powerRow,listenRow,pipeRow,logoutRow;
+    private static FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,60 +42,78 @@ public class MainActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.powerToolbar);
         setSupportActionBar(toolbar);
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setHomeButtonEnabled(true);
-            actionBar.setDisplayHomeAsUpEnabled(true);
+        activity = MainActivity.this;
+        actionBar = getSupportActionBar();
+        configureToolBar("PowerShare","basic",false);
+        Fragment fragment = null;
+        MainPowerShareFragment mainPowerShareFragment = (MainPowerShareFragment)
+                (fragment = new MainPowerShareFragment());
+        if(fragment != null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, fragment).commit();
         }
-        titles.add("POST");
-        titles.add("APPROVAL");
-        titles.add("QUEUE");
-        titles.add("HISTORY");
-
-        powerPager = (ViewPager)findViewById(R.id.powerPager);
-        powerPagerAdapter = new PowerPagerAdapter(getSupportFragmentManager(),titles);
-        powerPager.setAdapter(powerPagerAdapter);
-        setTabPagerStrip();
         setNavDrawerLayout();
+        linearLayoutMain = (LinearLayout)findViewById(R.id.linear_mainMain);
+        frameLayout = (FrameLayout)findViewById(R.id.frame_main);
     }
 
-    private void setTabPagerStrip() {
-        mTabLayout = (TabLayout)findViewById(R.id.powerTabLayout);
-        powerPager.setOnPageChangeListener(this);
-        mTabLayout.setTabsFromPagerAdapter(powerPagerAdapter);
-        mTabLayout.setupWithViewPager(powerPager);
-        mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-        mTabLayout.setOnTabSelectedListener(this);
-        setFontToTabs(mTabLayout);
-    }
-
-    private void setFontToTabs(TabLayout tabLayout) {
-        Typeface mTypeface = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Regular.ttf");
-        ViewGroup vg = (ViewGroup) tabLayout.getChildAt(0);
-        int tabsCount = vg.getChildCount();
-        for (int j = 0; j < tabsCount; j++) {
-            ViewGroup vgTab = (ViewGroup) vg.getChildAt(j);
-            int tabChildsCount = vgTab.getChildCount();
-            for (int i = 0; i < tabChildsCount; i++) {
-                View tabViewChild = vgTab.getChildAt(i);
-                if (tabViewChild instanceof TextView) {
-                    ((TextView) tabViewChild).setTypeface(mTypeface, Typeface.NORMAL);
-                    ((TextView) tabViewChild).setTextSize(14);
-                }
-            }
-        }
-    }
-
-    public void setNavDrawerLayout(){
+    public void setNavDrawerLayout() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawerLayout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar,R.string.drawer_close,R.string.drawer_open);
+                this, drawer, toolbar, R.string.drawer_close, R.string.drawer_open);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    public void configureToolBar(String title,String mode,boolean backNeeded) {
+        for(int i = 0; i<toolbar.getChildCount();i++) {
+            View view = toolbar.getChildAt(i);
+            if (view instanceof TextView) {
+                TextView tv = (TextView) view;
+                if (tv.getText().equals(activity.getTitle())) {
+                    //tv.setTypeface(font);
+                    tv.setTextSize(16);
+                    tv.setText(title);
+                    tv.setAllCaps(true);
+                    break;
+                }
+            }
+        }
+        if(backNeeded){
+            toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    navigateTo(new MainPowerShareFragment(),"MainPowerShareFragment",null);
+                }
+            });
+        }else{
+            if (actionBar != null) {
+                actionBar.setHomeButtonEnabled(true);
+                actionBar.setDisplayHomeAsUpEnabled(true);
+            }
+            Log.i(TAG,"seems no back needed");
+        }
+
+        if(!mode.equals(Constants.APP_BAR_MODE_BASIC)){
+            Log.i(TAG,"do nothing, basic mode selected");
+        }else {
+            Log.i(TAG,"do nothing, basic mode selected");
+        }
+    }
+
+    public void navigateTo(Fragment fragment, String backStackLabel, Bundle bundle) {
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        Fragment previousInstance = getSupportFragmentManager().findFragmentByTag(backStackLabel);
+        if (previousInstance != null)
+            fragmentTransaction.remove(previousInstance);
+        fragmentTransaction.replace(R.id.frame_main, fragment);
+        if(bundle != null){
+            fragment.setArguments(bundle);
+        }
+        fragmentTransaction.commit();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -124,33 +134,6 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-    }
-
-    @Override
-    public void onPageSelected(int position) {
-
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int state) {
-    }
-
-    @Override
-    public void onTabSelected(TabLayout.Tab tab) {
-        powerPager.setCurrentItem(tab.getPosition());
-    }
-
-    @Override
-    public void onTabUnselected(TabLayout.Tab tab) {
-    }
-
-    @Override
-    public void onTabReselected(TabLayout.Tab tab) {
-    }
-
-    @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.powerRow:
@@ -164,11 +147,9 @@ public class MainActivity extends AppCompatActivity implements
                 break;
 
             case R.id.pipeRow:
-                pipeRow.setBackgroundColor(getResources().getColor(R.color.background_tab_selected_indicator));
                 break;
 
             case R.id.logoutRow:
-                logoutRow.setBackgroundColor(getResources().getColor(R.color.background_tab_selected_indicator));
                 break;
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawerLayout);

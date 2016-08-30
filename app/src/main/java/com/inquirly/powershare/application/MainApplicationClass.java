@@ -46,14 +46,4 @@ public class MainApplicationClass extends Application {
         req.setTag(TAG);
         getRequestQueue().add(req);
     }
-
-    public String getSharedData(String data){
-        String dbData = null;
-          switch (data){
-            case "userId":
-//                    dbData = sharedPreferences.getString(Constants,null);
-                break;
-        }
-        return dbData;
-    }
 }

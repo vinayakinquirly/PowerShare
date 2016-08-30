@@ -27,29 +27,12 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-            <android.support.design.widget.TabLayout
-                android:id="@+id/powerTabLayout"
-                android:layout_width="match_parent"
-                android:layout_height="?android:attr/actionBarSize"
-                android:background="@color/background_action_bar"
-                app:layout_collapseMode="none"
-                android:layout_marginTop="?android:attr/actionBarSize"
-                app:tabIndicatorColor="@color/accent_material_dark"
-                app:tabIndicatorHeight="4dp"
-                app:tabSelectedTextColor="@android:color/white"
-                app:tabTextColor="@color/white"
-                app:tabGravity="fill"/>
+            android:id="@+id/frame_main">
+        </FrameLayout>
 
-            <android.support.v4.view.ViewPager
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/powerPager">
-            </android.support.v4.view.ViewPager>
-        </LinearLayout>
 
     </android.support.design.widget.CoordinatorLayout>
 

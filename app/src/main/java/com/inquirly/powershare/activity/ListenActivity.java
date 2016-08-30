@@ -80,6 +80,12 @@ public class ListenActivity extends AppCompatActivity implements
         int id = item.getItemId();
         if(id==android.R.id.home){
             onBackPressed();
+
+        }else if (id == R.id.action_alert) {
+            return true;
+
+        }else if (id == R.id.action_chat) {
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -1,14 +1,10 @@
 package com.inquirly.powershare.activity;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.MenuItem;
 import com.inquirly.powershare.R;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
 
 public class InpireMeActivity extends AppCompatActivity {
 
@@ -35,7 +31,6 @@ public class InpireMeActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 
     @Override
     public void onBackPressed() {

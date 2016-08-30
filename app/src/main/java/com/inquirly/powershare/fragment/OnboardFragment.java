@@ -1,5 +1,7 @@
 package com.inquirly.powershare.fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.os.Bundle;
 import android.view.View;
@@ -14,18 +16,14 @@ import android.widget.RelativeLayout;
 import android.support.v4.app.Fragment;
 import com.inquirly.powershare.activity.LoginActivity;
 import com.inquirly.powershare.activity.OnboardActivity;
+import com.inquirly.powershare.constants.Constants;
 
 public class OnboardFragment extends Fragment {
 
     private int position;
     private View view;
-    private RelativeLayout base1;
-    private LinearLayout base2;
-    private TextView main_head,sub_head,message,prog_1,prog_2,prog_3,powerBtn;
-    private ImageView image;
     private static final String TAG ="OnboardScreenOne";
 
-    // newInstance constructor for creating fragment with arguments
     public static OnboardFragment newInstance(int page) {
         OnboardFragment fragmentFirst = new OnboardFragment();
         Bundle args = new Bundle();
@@ -34,26 +32,26 @@ public class OnboardFragment extends Fragment {
         return fragmentFirst;
     }
 
-    // Store instance variables based on arguments passed
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        position = getArguments().getInt("position", 0);
+        position = getArguments().getInt("position");
+        OnboardActivity.colorPill(position);
         Log.i(TAG,"onCreate position--" +position);
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_onboard, container, false);
-        main_head = (TextView)view.findViewById(R.id.txt_walkthrough_title);
-        image = (ImageView)view.findViewById(R.id.img_walkthrough);
-        sub_head = (TextView)view.findViewById(R.id.txt_walkthrough_description);
-        message = (TextView)view.findViewById(R.id.txt_walkthrough_dexcription_sub);
-        base1 = (RelativeLayout)view.findViewById(R.id.relative_walkthrough_base_one);
-        base2 = (LinearLayout)view.findViewById(R.id.relative_walkthrough_base_two);
-        powerBtn = (TextView)view.findViewById(R.id.txt_walkthrough_go_btn);
 
-        OnboardActivity.colorPill(position);
+        ImageView      image = (ImageView) view.findViewById(R.id.img_walkthrough);
+        TextView       main_head = (TextView) view.findViewById(R.id.txt_walkthrough_title);
+        TextView       powerBtn = (TextView) view.findViewById(R.id.txt_walkthrough_go_btn);
+        TextView       sub_head = (TextView) view.findViewById(R.id.txt_walkthrough_description);
+        LinearLayout   base2 = (LinearLayout) view.findViewById(R.id.relative_walkthrough_base_two);
+        TextView       message = (TextView) view.findViewById(R.id.txt_walkthrough_dexcription_sub);
+        RelativeLayout base1 = (RelativeLayout) view.findViewById(R.id.relative_walkthrough_base_one);
 
         switch(position){
             case 0:
@@ -83,7 +81,14 @@ public class OnboardFragment extends Fragment {
                 powerBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(getActivity(), LoginActivity.class);
+                        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(
+                                Constants.SHARED_ONE_TIME_BOARDING, Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.clear();
+                        editor.putBoolean(Constants.SHARED_IS_FIRST_DOWNLOAD,true);
+                        editor.apply();
+
+                        Intent intent = new Intent(getActivity(),LoginActivity.class);
                         startActivity(intent);
                         getActivity().finish();
                     }

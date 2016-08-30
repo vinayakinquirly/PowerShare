@@ -30,14 +30,17 @@ public class Constants {
 //        public static final String = "";
 
     /*------------------------------------SHARED PREFERENCES--------------------------------------*/
+        public static final String SHARED_ONE_TIME_BOARDING = "fresh_download";
+        public static final String SHARED_IS_FIRST_DOWNLOAD= "is_first_download";
+        public static final String SHARED_USER_DETAILS = "user_details";
+        public static final String SHARED_IS_LOGGED_IN = "is_logged_in";
+        public static final String SHARED_USER_EMAIL = "user_email";
+        public static final String SHARED_USER_SEC_TOKEN= "user_sec_token";
+//        public static final String = "";
+    /*------------------------------------SHARED PREFERENCES--------------------------------------*/
+        public static final String APP_BAR_MODE_BASIC= "basic";
 //        public static final String = "";
 //        public static final String = "";
-//        public static final String = "";
-//        public static final String = "";
-//        public static final String = "";
-//        public static final String = "";
-//        public static final String = "";
-//        public static final String = "";
-//        public static final String = "";
+
 
 }
