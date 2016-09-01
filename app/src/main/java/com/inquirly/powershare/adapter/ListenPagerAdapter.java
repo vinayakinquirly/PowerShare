@@ -2,6 +2,7 @@ package com.inquirly.powershare.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.inquirly.powershare.fragment.ListenFeedbacksFragment;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 /**
  * Created by Vinayak on 8/29/2016.
  */
-public class ListenPagerAdapter extends FragmentStatePagerAdapter {
+public class ListenPagerAdapter extends FragmentPagerAdapter {
 
     ArrayList<String> titles = new ArrayList<>();
 

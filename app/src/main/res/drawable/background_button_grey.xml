@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <solid
-        android:color="@color/background_sentiment_negative" />
+        android:color="@color/grey_year" />
     <corners
         android:radius="@dimen/corner_radius_button" />
 </shape>

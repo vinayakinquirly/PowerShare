@@ -16,6 +16,17 @@
         <item name="windowActionBar">false</item>
     </style>
 
+    <style name="label_small_secondary">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/background_action_bar</item>
+    </style>
+
+    <style name="line_separator_grey">
+        <item name="android:background">@color/grey_year</item>
+    </style>
+
+
+
     <style name="Widget.Design.TabLayout" parent="@style/Base.Widget.Design.TabLayout">
         <item name="tabMode">fixed</item>
         <item name="tabGravity">fill</item>

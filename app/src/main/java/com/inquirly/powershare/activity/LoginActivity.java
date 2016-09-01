@@ -1,24 +1,21 @@
 package com.inquirly.powershare.activity;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
 import android.os.Bundle;
-import android.view.Display;
 import android.view.View;
 import org.json.JSONObject;
 import java.util.ArrayList;
+import android.view.Window;
 import android.content.Intent;
 import org.json.JSONException;
-
-import android.view.Window;
-import android.view.WindowManager;
+import android.content.Context;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.inquirly.powershare.R;
+import android.view.WindowManager;
 import com.android.volley.VolleyError;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
-
 import com.inquirly.powershare.constants.Constants;
 import com.inquirly.powershare.others.MakeApiRequest;
 import com.inquirly.powershare.others.IRequestCallBack;
@@ -26,7 +23,7 @@ import com.inquirly.powershare.application.MainApplicationClass;
 
 public class LoginActivity extends AppCompatActivity {
 
-    String userEmail = null;
+    private String userEmail = null;
     private EditText email,pass;
     private JSONObject jsonObject = new JSONObject();
     private static final String TAG = "LoginActivity";

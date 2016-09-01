@@ -1,12 +1,13 @@
 package com.inquirly.powershare.adapter;
 
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.Log;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import com.inquirly.powershare.fragment.OnboardFragment;
 
-public class OnboardPagerAdapter extends FragmentStatePagerAdapter {
+public class OnboardPagerAdapter extends FragmentPagerAdapter {
 
     private static final String TAG = "OnboardPagerAdapter";
     public OnboardPagerAdapter(FragmentManager fm) {
