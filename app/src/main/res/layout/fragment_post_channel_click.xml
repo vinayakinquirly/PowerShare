@@ -1,0 +1,249 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="?attr/actionBarSize"
+    tools:context=".fragment.PostChannelClickFragment">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="5dp"
+        android:id="@+id/power_post_list"
+        android:gravity="center_horizontal"
+        android:background="#08efefef">
+
+        <ImageView
+            android:id="@+id/clicked_fb"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_facebook_selected_powershare"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/background_channel_selected_fb"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/clicked_twitter"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_twitter_selected_powershare"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/background_channel_selected_twitter"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/clicked_message"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_sms_selected_powershare"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/background_channel_selected_sms"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/clicked_email"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_email_selected_powershare"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/background_channel_selected_email"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/clicked_linkdn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_linkedin_selected_powershare"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/background_channel_selected_lin"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/clicked_qr"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_qr_selected_powershare"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/background_channel_selected_qr"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/clicked_beacon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_beacon_selected_powershare"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/background_channel_selected_beacon"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone" />
+
+    </TableRow>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Twitter Channels"
+            android:id="@+id/head_channel_name"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:typeface="sans" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Select All"
+                        android:id="@+id/select_all"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:textSize="15sp"
+                        android:textColor="#000"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Deselect All"
+                        android:id="@+id/deselct_all"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:textSize="15sp"
+                        android:textColor="#000"
+                        android:typeface="sans" />
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#dcdcdc"/>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:id="@+id/account_image"
+                            android:src="@drawable/ic_placeholder_circular"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="alok_inq"
+                            android:id="@+id/account_name"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="14sp"
+                            android:textColor="#000" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="7">
+
+                        <ImageView
+                            android:visibility="gone"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:id="@+id/acct_select"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_drawables_pipeline_pipeline" />
+                    </TableRow>
+
+                </TableRow>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="New Text"
+                        android:id="@+id/textView18"
+                        android:background="@color/background_sentiment_positive" />
+
+                    <TextView
+                        android:id="@+id/btn_done"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="DONE"
+                        android:textColor="#fff"
+                        android:gravity="center_horizontal"
+                        android:paddingBottom="8dp"
+                        android:paddingTop="8dp"
+                        android:background="@drawable/background_channel_done"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

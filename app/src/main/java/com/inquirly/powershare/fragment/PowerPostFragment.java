@@ -29,8 +29,9 @@ public class PowerPostFragment extends Fragment implements View.OnClickListener{
 
     private View view;
     private File file;
-    private String imagePath, fileName;
+    private ImageView channel_fb;
     private boolean isAddPhotoClicked;
+    private String imagePath, fileName;
     private int REQUEST_CODE_TAKE_PICTURE = 10;
     private int REQUEST_CODE_LOAD_FROM_GALLERY = 11;
     private HorizontalScrollView post_horizontal_view;
@@ -50,10 +51,13 @@ public class PowerPostFragment extends Fragment implements View.OnClickListener{
         TextView loadFromGalleryBtn = (TextView) view.findViewById(R.id.txt_post_load_picture_gallery);
         TextView takePicFromGalleryBtn = (TextView) view.findViewById(R.id.txt_post_load_picture_camera);
         post_horizontal_view = (HorizontalScrollView)view.findViewById(R.id.post_horizontal_view);
+        channel_fb = (ImageView)view.findViewById(R.id.channel_fb);
+
         addVideo.setOnClickListener(this);
         table_inpireMe.setOnClickListener(this);
         moveLeft.setOnClickListener(this);
         moveRight.setOnClickListener(this);
+        channel_fb.setOnClickListener(this);
 
         addImages.setOnClickListener(new OptionHandler());
         loadFromGalleryBtn.setOnClickListener(new OptionHandler());
@@ -112,6 +116,13 @@ public class PowerPostFragment extends Fragment implements View.OnClickListener{
 
             case R.id.move_channel_right:
                 post_horizontal_view.scrollTo(500,0);
+                break;
+
+            case R.id.channel_fb:
+                Bundle bundle = new Bundle();
+                bundle.putString("channelType","fb");
+                ((MainActivity)getActivity()).navigateTo(new PostChannelClickFragment(),
+                        "PowerPostFragment",bundle);
                 break;
         }
     }

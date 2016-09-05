@@ -1,6 +1,7 @@
 package com.inquirly.powershare.activity;
 
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.os.Bundle;
 import android.view.Menu;
@@ -157,5 +158,11 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        return super.onKeyDown(keyCode, event);
     }
 }

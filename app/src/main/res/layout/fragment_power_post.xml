@@ -64,33 +64,201 @@
                             android:layout_gravity="center_vertical">
 
                             <ImageView
-                                android:layout_width="match_parent"
+                                android:id="@+id/channel_fb"
+                                android:layout_width="60dp"
                                 android:layout_height="60dp"
-                                android:src="@drawable/background_button_blue"
+                                android:src="@drawable/ic_facebook_unselected_powershare"
+                                android:paddingTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="15dp"
+                                android:background="@drawable/background_channel_ring"
                                 android:layout_weight="1"
-                                android:layout_marginLeft="5dp" />
+                                android:layout_marginLeft="5dp"
+                                android:visibility="visible"/>
 
                             <ImageView
-                                android:layout_width="match_parent"
+                                android:id="@+id/selected_fb"
+                                android:layout_width="60dp"
                                 android:layout_height="60dp"
-                                android:src="@drawable/background_button_blue"
+                                android:src="@drawable/ic_facebook_selected_powershare"
+                                android:paddingTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="15dp"
+                                android:background="@drawable/background_channel_selected_fb"
                                 android:layout_weight="1"
-                                android:layout_marginLeft="5dp" />
+                                android:layout_marginLeft="5dp"
+                                android:visibility="gone" />
 
                             <ImageView
-                                android:layout_width="match_parent"
+                                android:id="@+id/channel_twitter"
+                                android:layout_width="60dp"
                                 android:layout_height="60dp"
-                                android:src="@drawable/background_button_blue"
+                                android:src="@drawable/ic_twitter_unselected_powershare"
+                                android:paddingTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="15dp"
+                                android:background="@drawable/background_channel_ring"
                                 android:layout_weight="1"
-                                android:layout_marginLeft="5dp" />
+                                android:layout_marginLeft="5dp"
+                                android:visibility="visible"/>
 
                             <ImageView
-                                android:layout_width="match_parent"
+                                android:id="@+id/selected_twitter"
+                                android:layout_width="60dp"
                                 android:layout_height="60dp"
-                                android:src="@drawable/background_button_blue"
+                                android:src="@drawable/ic_twitter_selected_powershare"
+                                android:paddingTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="15dp"
+                                android:background="@drawable/background_channel_selected_twitter"
                                 android:layout_weight="1"
-                                android:id="@+id/imageView3"
-                                android:layout_marginLeft="5dp" />
+                                android:layout_marginLeft="5dp"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/channel_message"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/ic_drawer_messages"
+                                android:paddingTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="15dp"
+                                android:background="@drawable/background_channel_ring"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="5dp"
+                                android:visibility="visible"/>
+
+                            <ImageView
+                                android:id="@+id/selected_message"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/ic_sms_selected_powershare"
+                                android:paddingTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="15dp"
+                                android:background="@drawable/background_channel_selected_sms"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="5dp"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/channel_email"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/ic_email_unselected_powershare"
+                                android:paddingTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="15dp"
+                                android:background="@drawable/background_channel_ring"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="5dp"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/selected_email"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/ic_email_selected_powershare"
+                                android:paddingTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="15dp"
+                                android:background="@drawable/background_channel_selected_email"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="5dp"
+                                android:visibility="gone"/>
+
+
+                            <ImageView
+                                android:id="@+id/channel_linkdn"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/ic_linkedin_unselected_powershare"
+                                android:paddingTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="15dp"
+                                android:background="@drawable/background_channel_ring"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="5dp"
+                                android:visibility="visible" />
+
+                            <ImageView
+                                android:id="@+id/selected_linkdn"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/ic_linkedin_selected_powershare"
+                                android:paddingTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="15dp"
+                                android:background="@drawable/background_channel_selected_lin"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="5dp"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/channel_qr"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/ic_qr_unselected_powershare"
+                                android:paddingTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="15dp"
+                                android:background="@drawable/background_channel_ring"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="5dp"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/selected_qr"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/ic_qr_selected_powershare"
+                                android:paddingTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="15dp"
+                                android:background="@drawable/background_channel_selected_qr"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="5dp"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/channel_beacon"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/ic_beacon_unselected_powershare"
+                                android:paddingTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="15dp"
+                                android:background="@drawable/background_channel_ring"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="5dp"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/selected_beacon"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/ic_beacon_selected_powershare"
+                                android:paddingTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="15dp"
+                                android:background="@drawable/background_channel_selected_beacon"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="5dp"
+                                android:visibility="gone" />
 
                         </LinearLayout>
 
